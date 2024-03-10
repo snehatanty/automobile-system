@@ -1,0 +1,32 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tourism Travel Management</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css'%}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css'%}"/>
+
+</head>
+<body style="background-image: url('{% static 'images/signup.webp' %}');
+background-repeat:no-repeat;background-size:100%;";>
+<a href="{% url 'registration'%}"><font color="white">Sign-up | </font></a>
+<a href="{% url 'login'%}"><font color="white">Login | </font></a>
+<a href="{% url ''%}"><font color="white"> Home | </font></a>
+<a href="{% url 'contact'%}"><font color="white"> Contact | </font></a>
+<a href="{% url 'about'%}"><font color="white"> About Us | </font></a>
+<a href="{% url ''%}"><font color="white"> Add Packages | </font></a>
+<a href="{% url ''%}"><font color="white"> View Packages | </font></a>
+<a href="{% url 'logout'%}"><font color="white">Log Out | </font></a>
+
+<br>
+{% block 'b1' %}
+<h2 align="center"><font color="blue">Welcome to Our Website CarConnect</font></h2>
+<div>
+     {% for message in messages %}
+    <h4 align="center" style="color: black;">{{message}}</h4>
+    {% endfor %}
+</div>
+{% endblock %}
+</br>
+</body>
+</html>

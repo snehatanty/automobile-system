@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% block 'b1' %}
+<h2 align="center"><font color="white"> Sign-up </font> </h2>
+<form method="post" action= "{% url 'checkregistration' %}">
+    {% csrf_token %}
+    <table align="center" border="2">
+        <td> <font color="white">Enter Name  </font></td>
+            <td> <input type="text" name="name" required/> </td>
+        </tr>
+        <tr>
+        <td><font color="white">Enter Address</font> </td>
+            <td><input type="text" name="addr" required/></td>
+        </tr>
+        <td><font color="white"> Enter e-mail </font> </td>
+            <td> <input type="text" name="email" required/> </td>
+        </tr>
+        <tr>
+        <td><font color="white">Enter Phone Number </font></td>
+            <td><input type="text" name="pno" required/></td>
+        </tr>
+        <tr>
+        <td><font color="white"> Enter User Name  </font></td>
+            <td> <input type="text" name="uname" required/> </td>
+        </tr>
+        <tr>
+        <td><font color="white">Password</font></td>
+            <td><input type="password" name="pwd" required/></td>
+        </tr>
+        <td><font color="white"> Confirm Password</font></td>
+            <td><input type="password" name="cpwd" required/></td>
+        </tr>
+        <tr>
+           <td align="center"><input type="submit" value="Sign-up"></td>
+            <td align="center"><input type="reset" value="Clear"></td>
+        </tr>
+
+    </table>
+</form>
+
+
+<div>
+    {% for i in messages %}
+    <h4 align="center" style="color: white;">{{i}}</h4>
+    {% endfor %}
+</div>
+    {% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'ttmhome.html' %}
+{% block 'b1' %}
+<h2 align="center"><font color="green">Packages Available</font></h2>
+<table align="center" border="2">
+    <thead>
+    <tr bgcolor="lightgray">
+    <td>Car Model</td>
+    <td>Car Company</td>
+    <td>Registration Number</td>
+    <td>Car Colour</td>
+    <td>Chassis Number</td>
+    </tr>
+    </thead>
+
+    {% for i in placesdata %}
+    <tr align="center">
+    <td>{{i.carmodel}}</td>
+    <td>{{i.carcom}}</td>
+    <td>{{i.regno}}</td>
+    <td>{{i.carcolor}}</td>
+    <td>{{i.chno}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

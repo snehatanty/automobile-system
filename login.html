@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block 'b1' %}
+<h2 align="center"> <font color="white">Login Page </font> </h2>
+<form method="post" action= "{% url 'checkadminlogin' %}">
+    {% csrf_token %}
+    <table align="center" border="2">
+        <tr>
+        <td><font color="white"> Enter User Name  </font></td>
+            <td> <input type="text" name="uname" required/> </td>
+        </tr>
+        <tr>
+        <td><font color="white">Enter Password</font></td>
+            <td><input type="password" name="pwd" required/></td>
+        </tr>
+        <tr>
+           <td align="center"><input type="submit" value="Login"></td>
+            <td align="center"><input type="reset" value="Clear"></td>
+        </tr>
+
+    </font>
+    </table>
+</form>
+
+<div>
+    {% for message in messages %}
+    <h4 align="center" style="color: white;">{{message}}</h4>
+    {% endfor %}
+</div>
+{% endblock %}
